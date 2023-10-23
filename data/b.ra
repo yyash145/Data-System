@@ -1,0 +1,7 @@
+LOAD Student
+ba <- SELECT Stud_sex == 1 FROM Student
+bb <- SELECT Stud_age > 16 FROM ba
+bc <- PROJECT Stud_Id, Stud_age FROM bb
+RENAME Stud_Id TO stud_id FROM bc 
+RENAME Stud_age TO stud_age FROM bc 
+PRINT bc

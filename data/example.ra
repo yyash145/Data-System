@@ -1,0 +1,6 @@
+LOAD Student
+aa <- SELECT Stud_sex == 0 FROM Student
+ab <- PROJECT Stud_Id, Stud_age FROM aa
+RENAME Stud_Id TO stud_id FROM ab 
+RENAME Stud_age TO stud_age FROM ab 
+PRINT ab

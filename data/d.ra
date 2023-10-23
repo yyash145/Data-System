@@ -1,0 +1,12 @@
+LOAD Marks
+LOAD Student
+da <- SELECT Maths_marks >= 70 FROM Marks
+db <- SELECT  Physics_marks > 60 FROM da
+dc <- CROSS Student db
+dd <- SELECT Student_Stud_Id == db_Stud_Id FROM dc 
+de <- SELECT Stud_age >= 16 FROM dd
+df <- SELECT Stud_age <= 18 FROM de
+dg <- PROJECT Student_Stud_Id, Maths_marks, Physics_marks, Stud_age FROM df
+RENAME Student_Stud_Id TO stud_id FROM dg
+RENAME Stud_age TO stud_age FROM dg
+PRINT dg
